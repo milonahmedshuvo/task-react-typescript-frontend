@@ -1,8 +1,44 @@
 import React from "react";
 import logo from "../../image/logo (2).png";
+import { Link } from "react-router-dom";
 
-const Signup: React.FC = () => {
+interface FormProps {
+  handleFormSubmit: any
+}
 
+
+
+const Signup: React.FC<FormProps> = ( ) => {
+
+
+  const handleSignup = (event: React.FormEvent<HTMLFormElement>, ) =>{
+    event.preventDefault()
+    const target = event.target as typeof event.target & {
+      email: { value: string };
+      password: { value: string };
+    };
+  
+    const email = target.email.value;
+    const password = target.password.value;
+    console.log(email)
+    console.log(password)
+
+    fetch("https://reqres.in/api/register", {
+      method:"POST",
+      headers:{
+        // "content-type":"application/json"
+        'content-type': 'application/json',
+      },
+      body:JSON.stringify({ email:email, password:password})
+    })
+    .then((res) => res.json())
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err))
+  }
+
+
+
+  
 
   return (
     <div className="flex justify-center items-center mt-20 mx-1 ">
@@ -14,11 +50,16 @@ const Signup: React.FC = () => {
           Sign up to join with Stack
         </p>
 
+
+
+      {/* creatting form  */}
+        <form onSubmit={handleSignup}>
+          
         <div className="mt-14">
           <span className="font-medium text-[#404040]">Email</span>
           <input
             type="email"
-            name=""
+            name="email"
             required
             className="border py-2 rounded block border-gray-300 w-full"
             id=""
@@ -29,7 +70,7 @@ const Signup: React.FC = () => {
           <span className="font-medium text-[#404040]">Password</span>
           <input
             type="password"
-            name=""
+            name="password"
             required
             className="border py-2 rounded block border-gray-300 w-full"
             id=""
@@ -42,6 +83,14 @@ const Signup: React.FC = () => {
         >
           Sign Up
         </button>
+
+        </form>
+
+        
+
+
+
+        <p className="text-[#B0B7C3] text-lg md:text-xl mt-6 ">Already have an account? <span> <Link to="/signin"  className="text-[#377DFF]">Sign In</Link> </span> </p>
       </div>
     </div>
   );

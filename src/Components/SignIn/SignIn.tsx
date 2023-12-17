@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from "../../image/logo (2).png"
+import { Link } from 'react-router-dom'
 
 
 const SignIn:React.FC = () => {
@@ -42,6 +43,9 @@ const SignIn:React.FC = () => {
         >
           Sign In
         </button>
+
+
+        <p className="text-[#B0B7C3] text-lg md:text-xl mt-6 ">Don’t have an account? <span> <Link to="/signup"  className="text-[#377DFF]">Sign Up</Link> </span> </p>
       </div>
     </div>
   )

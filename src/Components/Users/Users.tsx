@@ -15,7 +15,7 @@ const Users:React.FC = () => {
      </div>
 
 
-      <div className='grid grid-cols-3'>
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-0'>
 
 
            {/* user info  */}
@@ -42,7 +42,7 @@ const Users:React.FC = () => {
 
            {/* status  */}
            <div className='border border-indigo-400 py-2 px-3 flex justify-between items-center'>
-              <p className='text-lg'>Lorem, ipsum dolor.</p>
+              <p className='text-sm font-semibold text-[#3D9B73]'>Customer</p>
               
               <div className='flex justify-between gap-10 items-center'>
               <p className='text-xl text-[#667085]'> <FaTrashAlt></FaTrashAlt> </p>
@@ -53,6 +53,9 @@ const Users:React.FC = () => {
 
 
       </div>
+
+
+      
     </div>
   )
 }

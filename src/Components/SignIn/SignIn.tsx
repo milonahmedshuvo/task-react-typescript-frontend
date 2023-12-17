@@ -5,6 +5,35 @@ import { Link } from 'react-router-dom'
 
 const SignIn:React.FC = () => {
 
+
+  const handleForLogin = (event: React.FormEvent<HTMLFormElement> ) => {
+        event.preventDefault()
+        console.log("data")
+        const target = event.target as typeof event.target & {
+             email: {value: string},
+             password: {value: string}
+        };
+
+        const email = target.email.value;
+        const password = target.password.value;
+
+        fetch("https://reqres.in/api/login", {
+          method: "POST",
+          headers: {
+            'content-type':'application/json'
+          },
+          body: JSON.stringify({email, password})
+        })
+        .then((res) => res.json())
+        .then((data) => console.log(data))
+        .catch((err) => console.log(err))
+  }
+
+
+
+
+
+
   return (
      <div className="flex justify-center items-center mt-20 mx-1 ">
       <div className="border border-gray-200 rounded-2xl w-full md:w-2/4 lg:w-2/4 xl:w-1/3 py-6 px-6 md:p-9 lg:py-12 lg:px-16 xl:p-16">
@@ -15,11 +44,18 @@ const SignIn:React.FC = () => {
            Sign In to continue with Stack
         </p>
 
-        <div className="mt-14">
+
+
+
+      {/* creatting sign in form  */}
+
+       <form onSubmit={handleForLogin}>
+
+       <div className="mt-14">
           <span className="font-medium text-[#404040]">Email</span>
           <input
             type="email"
-            name=""
+            name="email"
             required
             className="border py-2 rounded block border-gray-300 w-full"
             id=""
@@ -30,7 +66,7 @@ const SignIn:React.FC = () => {
           <span className="font-medium text-[#404040]">Password</span>
           <input
             type="password"
-            name=""
+            name="password"
             required
             className="border py-2 rounded block border-gray-300 w-full"
             id=""
@@ -43,6 +79,7 @@ const SignIn:React.FC = () => {
         >
           Sign In
         </button>
+       </form>
 
 
         <p className="text-[#B0B7C3] text-lg md:text-xl mt-6 ">Don’t have an account? <span> <Link to="/signup"  className="text-[#377DFF]">Sign Up</Link> </span> </p>

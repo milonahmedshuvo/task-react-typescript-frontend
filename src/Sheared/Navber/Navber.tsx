@@ -18,22 +18,23 @@ const Navber:React.FC = () => {
 
   
   return (
-    <div className='bg-[#6941C6] py-6 px-2 md:px-6 flex flex-col md:flex-row lg:flex-row xl:flex-row gap-10 justify-between items-center'>
+    <div className='bg-[#6941C6] py-6 px-1 md:px-6 flex flex-col md:flex-row lg:flex-row xl:flex-row gap-10 justify-between items-center'>
 
 
         <div className='flex items-center'>
 
          <div className='flex items-center'>
              <img className='text-white' src={logo} alt="" />
-                <h3 className='text-white text-xl font-medium ml-4'>Stack</h3>
+                <h3 className='text-white text-lg md:text-xl font-medium ml-2 md:ml-4'>Stack</h3>
          </div>
 
          <div className='flex items-center ml-10' >
-         <Link to="/" className='mx-2 text-lg  text-white '> Home </Link>
-         <Link to="/users" className='mx-2 text-lg  text-white'> Users </Link>
-         <Link to="/dashboard" className='mx-2 text-lg  text-white'>Dashboard</Link>
-         <Link to="/signup" className='mx-2 text-lg  text-white ' > Signup </Link>
-         <Link to="/signin" className='mx-2 text-lg  text-white ' > Signin </Link>
+         <Link to="/" className='mx-1 md:mx-2 text-md md:text-lg  text-white '> Home </Link>
+         <Link to="/" className='mx-1 md:mx-2 text-md md:text-lg  text-white ' > Projects </Link>
+         <Link to="/users" className='mx-1 md:mx-2 text-md md:text-lg  text-white'> Users </Link>
+         <Link to="/dashboard" className='ml-1 md:mx-2 text-md md:text-lg text-white'>Dashboard</Link>
+         {/* <Link to="/signup" className='mx-2 text-lg  text-white ' > Signup </Link>
+         <Link to="/signin" className='mx-2 text-lg  text-white ' > Signin </Link> */}
          </div>
 
          

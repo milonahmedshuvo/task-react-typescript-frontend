@@ -35,6 +35,12 @@ const Signup: React.FC = ( ) => {
     .then((data) => {
       console.log(data)
       localStorage.setItem('authToken', data.token )
+
+      const form = document.getElementById("form") as HTMLFormElement;
+
+        if (form) {
+          form.reset();
+        }
     })
     .catch((err) => console.log(err))
   }
@@ -44,7 +50,7 @@ const Signup: React.FC = ( ) => {
   
 
   return (
-    <div className="flex justify-center items-center mt-20 mx-1 ">
+    <div className="flex justify-center items-center my-20 mx-1 ">
       <div className="border border-gray-200 rounded-2xl w-full md:w-2/4 lg:w-2/4 xl:w-1/3 py-6 px-6 md:p-9 lg:py-12 lg:px-16 xl:p-16">
         <div>
           <img src={logo} alt="" />
@@ -56,7 +62,7 @@ const Signup: React.FC = ( ) => {
 
 
       {/* creatting form  */}
-        <form onSubmit={handleSignup}>
+        <form id="form" onSubmit={handleSignup}>
           
         <div className="mt-14">
           <span className="font-medium text-[#404040]">Email</span>

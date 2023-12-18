@@ -36,7 +36,7 @@ function App() {
         },
         {
           path:"/users",
-          element: <Users/>
+          element: <Privateroute> <Users/> </Privateroute>
         },
         {
           path: "/signup",

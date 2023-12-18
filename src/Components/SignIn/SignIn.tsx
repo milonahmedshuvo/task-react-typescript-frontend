@@ -25,7 +25,11 @@ const SignIn:React.FC = () => {
           body: JSON.stringify({email, password})
         })
         .then((res) => res.json())
-        .then((data) => console.log(data))
+        .then((data) => {
+          console.log(data)
+          localStorage.setItem('authToken', data.token )
+          console.log("token", data.token)
+        })
         .catch((err) => console.log(err))
   }
 

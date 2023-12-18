@@ -31,6 +31,10 @@ function App() {
       element: <Layout/>,
       children: [
         {
+          path:"/",
+          element: <Signup/>
+        },
+        {
           path:"/users",
           element: <Users/>
         },

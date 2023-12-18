@@ -9,6 +9,14 @@ import Layout from './Components/Layout/Layout';
 import Users from './Components/Users/Users';
 import Signup from './Components/Singup/Singup';
 import SignIn from './Components/SignIn/SignIn';
+// redux 
+import { store } from './redux/store';
+import { Provider } from 'react-redux'
+
+
+
+
+
 
 
 
@@ -40,10 +48,9 @@ function App() {
 
   return (
     <div className='max-w-screen-2xl mx-auto'>
-      {/* <h1>React Projects </h1> */}
-      {/* <Singup></Singup> */}
-      {/* <SignIn></SignIn> */}
+      <Provider store={store}> 
       <RouterProvider router={router} />
+      </Provider>
     </div>
   )
 }

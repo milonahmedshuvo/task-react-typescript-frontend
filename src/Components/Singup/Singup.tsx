@@ -2,13 +2,13 @@ import React from "react";
 import logo from "../../image/logo (2).png";
 import { Link } from "react-router-dom";
 
-interface FormProps {
-  handleFormSubmit: any
-}
+// interface FormProps {
+//   handleFormSubmit: any
+// }
 
 
 
-const Signup: React.FC<FormProps> = ( ) => {
+const Signup: React.FC = ( ) => {
 
 
   const handleSignup = (event: React.FormEvent<HTMLFormElement>, ) =>{

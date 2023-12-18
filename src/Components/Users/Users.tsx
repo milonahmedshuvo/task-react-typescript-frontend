@@ -17,7 +17,7 @@ const Users:React.FC = () => {
 
 
   return (
-    <div className='mx-4 md:mx-10 lg:mx-14 xl:mx-16'>
+    <div className='mx-4 md:mx-10 lg:mx-14 xl:mx-16 mb-10'>
 
      <div className='flex justify-between items-center mt-6'>
      <h2 className='text-3xl'>Users</h2>

@@ -31,6 +31,7 @@ const Navber:React.FC = () => {
          <div className='flex items-center ml-10' >
          <Link to="/" className='mx-2 text-lg  text-white '> Home </Link>
          <Link to="/users" className='mx-2 text-lg  text-white'> Users </Link>
+         <Link to="/dashboard" className='mx-2 text-lg  text-white'>Dashboard</Link>
          <Link to="/signup" className='mx-2 text-lg  text-white ' > Signup </Link>
          <Link to="/signin" className='mx-2 text-lg  text-white ' > Signin </Link>
          </div>

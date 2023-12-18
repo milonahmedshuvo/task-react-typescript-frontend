@@ -12,6 +12,8 @@ import SignIn from './Components/SignIn/SignIn';
 // redux 
 import { store } from './redux/store';
 import { Provider } from 'react-redux'
+import Privateroute from './Components/Privateroute/Privateroute';
+import Dashboard from './Components/Dashboard/Dashboard';
 
 
 
@@ -39,6 +41,10 @@ function App() {
         {
           path: "/Signin",
           element: <SignIn/>
+        },
+        {
+          path: "/dashboard",
+          element: <Privateroute> <Dashboard></Dashboard> </Privateroute>
         }
       ]
     },
